@@ -8,4 +8,9 @@ class Customer < ApplicationRecord
   has_many :cart_items, dependent: :destroy
   has_many :ships, dependent: :destroy
   
+  # 会員氏名をフルネームで表示
+  def full_name
+    self.last_name + "" + self.first_name
+  end 
+  
 end
